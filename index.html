@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo Dinámico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+            margin: 0;
+        }
+        #greeting {
+            color: white; /* Color del texto blanco */
+            font-size: 2em; /* Tamaño de la fuente */
+            font-weight: bold;
+            text-shadow: 2px 2px 5px gray; /* Sombra gris */
+        }
+    </style>
+</head>
+<body>
+    <h2 id="greeting"></h2>
+    <script>
+        function getGreeting() {
+            const hour = new Date().getHours();
+            let greeting;
+            if (hour >= 5 && hour < 12) {
+                greeting = "Buenos días Hitler, demuestra quien es el más cabrón en la UNP, da todo con Jean Pierre, ambos son unos cracks.";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "Qué tal la tarde, ya diste todo o aún tienes energía para dar más? Hitler Ernesto y Jean Castro estarán en los libros.";
+            } else {
+                greeting = "Buenas noches, hoy fue un gran día, lo sé, pero mañana será mejor, así que descansa, no hay nada de malo, no te olvides.";
+            }
+            return greeting;
+        }
+
+        document.getElementById("greeting").innerText = getGreeting();
+    </script>
+</body>
+</html>
